@@ -1,0 +1,296 @@
+body, html {
+  width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Grid {
+    display: grid; 
+    grid-template-areas:
+    "topo topo"
+    "menu menu"
+    "conteúdo conteúdo"
+    "rodapé rodapé";
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .topo {
+      height: 50px;
+  }
+  .topo img {
+      width: 100px; 
+  }
+}
+
+.topo {
+    grid-area: topo;
+    background-color: yellow;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 110px;
+    width: 100vw;
+    position: fixed;
+    margin-bottom: 50px;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .topo img {
+    width: 250px;
+    height: auto; 
+}
+
+
+#home, 
+#sobre, 
+#produtos {
+  scroll-margin-top: 160px;
+}
+
+#depoimento {
+  padding-top: 170px;
+  margin-top: -170px;
+}
+
+.menu {
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration-color: black;
+    padding: 20px;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1100;
+    top: 100px;
+    left: 0;
+    background-color: white;
+  }
+
+  .item-menu {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    color: inherit;
+  }
+
+  .menu button {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #5e71e1;
+    border: 0;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu button:hover {
+  background-color: #390076;
+}
+
+.carrossel {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 100vw;
+  margin-top: 120px;
+  padding-bottom: 90px;
+}
+
+.carrossel-img {
+  width: 100vw;
+  display: block;
+  object-fit: cover;
+  image-rendering: auto;
+  height: auto;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: black;
+}
+
+.conteúdo {
+    grid-area: conteúdo;
+}
+
+.QuemSomos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 120px;
+}
+
+.QuemSomosImagem {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.QuemSomosImagem img {
+  max-width: 400px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.QuemSomosTexto {
+  max-width: 600px; 
+  padding: 20px; 
+}
+
+.QuemSomosTexto h3 {
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.QuemSomosTexto p {
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 150px;
+  margin-top: 120px;
+}
+
+.produtos-container h3 {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Tecido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc(50% - 20px); 
+  border: solid 1px;
+  border-radius: 15px;
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+}
+
+.ImagemTecido {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.Tecido button {
+  background-color: #5e71e1;
+  margin-bottom: 30px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Tecido button:hover {
+  background-color: #390076;
+}
+
+.depoimentos {
+  width: 100vw;
+  position: relative;
+  display: block;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 200px;
+}
+
+.img-depoimento {
+  image-rendering: pixelated;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.rodapé {
+  grid-area: rodapé;
+  width: 100vw;
+  height: 100px;
+  background: yellow;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rodapé p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: gray;
+}
